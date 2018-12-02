@@ -6,5 +6,7 @@ target 'RecycleOn' do
   use_frameworks!
 
   # Pods for RecycleOn
+  
   pod 'Firebase/Core'
+  pod 'FirebaseUI'
 end
