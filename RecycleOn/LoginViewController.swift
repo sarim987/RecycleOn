@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        createFakeUsers()
     }
 
 
@@ -33,11 +34,49 @@ class LoginViewController: UIViewController {
         present(authViewController, animated: true, completion: nil)
         
     }
+    
+    func createFakeUsers() {
+        createFakeUser(email: "johnny@umass.edu", password: "testing1", name: "Johnny", points: 1000)
+        createFakeUser(email: "rachel@umass.edu", password: "testing1", name: "Rachel", points: 850)
+        createFakeUser(email: "joe@umass.edu", password: "testing1", name: "Joe", points: 840)
+    }
+    
+    func createFakeUser(email: String, password: String, name: String, points: Int) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if error != nil { print(error) }
+            if let user = result?.user {
+                
+                let db = Database.database().reference().child("users").child(user.uid)
+                let values: [String: Any] = ["name": name,
+                                             "email": email,
+                                             "points": points,
+                                             "uid" : user.uid]
+                db.setValue(values, withCompletionBlock: { (err, db) in
+                    if err != nil { print(err) }
+                    print("Added \(name)")
+                })
+                
+                
+            }
+        }
+        
+    }
 }
 extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if error != nil {
             return
+        }
+        if let user = authDataResult?.user {
+            let db = Database.database().reference().child("users").child(user.uid)
+        let values: [String: Any] = ["name": user.displayName!,
+                                     "email": user.email!,
+                                     "points": 0,
+                                     "uid": user.uid]
+            db.setValue(values) { (err, db) in
+                if err != nil { print(err)}
+                print("Added \(user.displayName!)")
+            }
         }
         performSegue(withIdentifier: "goHome", sender: self)
     }

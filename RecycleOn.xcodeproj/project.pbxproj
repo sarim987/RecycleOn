@@ -10,6 +10,7 @@
 		6F65CD7C21B9B64C004C7753 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65CD7B21B9B64C004C7753 /* UserPageViewController.swift */; };
 		6F65CD7E21B9B84B004C7753 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65CD7D21B9B84B004C7753 /* CameraViewController.swift */; };
 		6FCD014521B59371003194F7 /* CouponsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD014421B59371003194F7 /* CouponsTableViewController.swift */; };
+		6FEE8E8B21B9E0DE003202AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE8E8A21B9E0DE003202AF /* User.swift */; };
 		6FF6F88D21B4274A00FDF2D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FF6F88C21B4274A00FDF2D0 /* GoogleService-Info.plist */; };
 		92F0583021AC66BA006D6FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F0582F21AC66BA006D6FAC /* AppDelegate.swift */; };
 		92F0583221AC66BA006D6FAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F0583121AC66BA006D6FAC /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 		6F65CD7B21B9B64C004C7753 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		6F65CD7D21B9B84B004C7753 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		6FCD014421B59371003194F7 /* CouponsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsTableViewController.swift; sourceTree = "<group>"; };
+		6FEE8E8A21B9E0DE003202AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FF6F88C21B4274A00FDF2D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92F0582C21AC66BA006D6FAC /* RecycleOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F0582F21AC66BA006D6FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				92F0583A21AC66BC006D6FAC /* LaunchScreen.storyboard */,
 				92F0583D21AC66BC006D6FAC /* Info.plist */,
 				6FF6F88C21B4274A00FDF2D0 /* GoogleService-Info.plist */,
+				6FEE8E8A21B9E0DE003202AF /* User.swift */,
 			);
 			path = RecycleOn;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				6FCD014521B59371003194F7 /* CouponsTableViewController.swift in Sources */,
 				92F0583221AC66BA006D6FAC /* LoginViewController.swift in Sources */,
 				6F65CD7E21B9B84B004C7753 /* CameraViewController.swift in Sources */,
+				6FEE8E8B21B9E0DE003202AF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

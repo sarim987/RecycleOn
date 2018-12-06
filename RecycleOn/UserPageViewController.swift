@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class UserPageViewController: UIViewController {
     
@@ -26,9 +27,23 @@ class UserPageViewController: UIViewController {
             userName.text = name
             userEmail.text = email
             userImage.image = UIImage(named: "ari")
+            getPoints(user.uid)
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func getPoints(_ uid: String) {
+        let db = Database.database().reference().child("users").child(uid)
+        db.observe(.value) { (snapshot) in
+            if snapshot.exists() {
+                let data = snapshot.value as? NSDictionary
+                if let points = data?["points"] {
+                    self.userPoints.text = "\(points) points"
+                }
+               
+            }
+        }
     }
 
 }
