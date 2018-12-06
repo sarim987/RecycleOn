@@ -12,7 +12,6 @@ import FirebaseDatabase
 
 class LeaderboardViewController: UIViewController {
     
-    var usernames: [String] = ["Johnny", "Rachel", "Joe", "Tajour", "Sarim", "Khang", "Ari"]
     var userImages: [UIImage?] = [UIImage(named: "johnny"),
                                   UIImage(named: "rachel"),
                                   UIImage(named: "joe"),
@@ -20,7 +19,6 @@ class LeaderboardViewController: UIViewController {
                                   UIImage(named: "sarim"),
                                   UIImage(named: "user_placeholder"),
                                   UIImage(named: "ari") ]
-    var userpoints: [Int] = [1000, 850, 840, 650, 600, 550, 500]
     
     var users:[User] = []
     @IBOutlet weak var tableview: UITableView!
