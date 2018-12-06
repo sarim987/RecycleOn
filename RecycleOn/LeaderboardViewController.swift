@@ -11,6 +11,13 @@ import UIKit
 class LeaderboardViewController: UIViewController {
     
     var usernames: [String] = ["Johnny", "Rachel", "Joe", "Tajour", "Sarim", "Khang", "Ari"]
+    var userImages: [UIImage?] = [UIImage(named: "johnny"),
+                                  UIImage(named: "rachel"),
+                                  UIImage(named: "joe"),
+                                  UIImage(named: "tajour"),
+                                  UIImage(named: "sarim"),
+                                  UIImage(named: "user_placeholder"),
+                                  UIImage(named: "ari") ]
     var userpoints: [Int] = [1000, 850, 840, 650, 600, 550, 500]
     @IBOutlet weak var tableview: UITableView!
     
@@ -33,6 +40,7 @@ extension LeaderboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = usernames[indexPath.row]
         cell.detailTextLabel?.text = "\(userpoints[indexPath.row]) points"
+        cell.imageView?.image = userImages[indexPath.row]
         return cell
     }
 }
