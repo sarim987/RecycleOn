@@ -83,7 +83,7 @@
         <!--User Page-->
         <scene sceneID="Wg3-Xi-BoS">
             <objects>
-                <viewController id="2RX-re-sgu" sceneMemberID="viewController">
+                <viewController id="2RX-re-sgu" customClass="UserPageViewController" customModule="RecycleOn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybU-x8-b4W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +146,12 @@
                         <viewLayoutGuide key="safeArea" id="eVd-GU-eH0"/>
                     </view>
                     <navigationItem key="navigationItem" title="User Page" id="bgP-2y-WwK"/>
+                    <connections>
+                        <outlet property="userEmail" destination="HgP-tD-pLX" id="RkF-wv-jQo"/>
+                        <outlet property="userImage" destination="bkD-cT-c8c" id="WYQ-6n-0hb"/>
+                        <outlet property="userName" destination="VXU-fR-A2b" id="dYG-15-5Wr"/>
+                        <outlet property="userPoints" destination="9Ce-yN-lxW" id="kDJ-8B-ccr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJK-WK-kCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
