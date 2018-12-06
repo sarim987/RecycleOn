@@ -25,6 +25,7 @@ class UserPageViewController: UIViewController {
             let email = user.email {
             userName.text = name
             userEmail.text = email
+            userImage.image = UIImage(named: "ari")
         }
 
         // Do any additional setup after loading the view.

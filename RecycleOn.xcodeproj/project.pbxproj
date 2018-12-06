@@ -83,13 +83,13 @@
 				92F0583121AC66BA006D6FAC /* LoginViewController.swift */,
 				92F0583321AC66BA006D6FAC /* LeaderboardViewController.swift */,
 				6FCD014421B59371003194F7 /* CouponsTableViewController.swift */,
+				6F65CD7B21B9B64C004C7753 /* UserPageViewController.swift */,
+				6F65CD7D21B9B84B004C7753 /* CameraViewController.swift */,
 				92F0583521AC66BA006D6FAC /* Main.storyboard */,
 				92F0583821AC66BC006D6FAC /* Assets.xcassets */,
 				92F0583A21AC66BC006D6FAC /* LaunchScreen.storyboard */,
 				92F0583D21AC66BC006D6FAC /* Info.plist */,
 				6FF6F88C21B4274A00FDF2D0 /* GoogleService-Info.plist */,
-				6F65CD7B21B9B64C004C7753 /* UserPageViewController.swift */,
-				6F65CD7D21B9B84B004C7753 /* CameraViewController.swift */,
 			);
 			path = RecycleOn;
 			sourceTree = "<group>";

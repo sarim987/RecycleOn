@@ -18,7 +18,6 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         launchCamera.isUserInteractionEnabled = true
         imageTapRecognizer.addTarget(self, action: #selector(CameraViewController.takeImage(_:)))
         launchCamera.addGestureRecognizer(imageTapRecognizer)
@@ -40,8 +39,6 @@ class CameraViewController: UIViewController {
         imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
     }
-    
-
 }
 
 extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
