@@ -15,6 +15,11 @@ class CouponsTableViewController: UITableViewController {
                                "Starbucks - 15% Off",
                                "Footlocker - Free Socks",
                                "Walmart - $5 Off"]
+    var companyLogos: [UIImage?] = [UIImage(named: "subway"),
+                                   UIImage(named: "dunkin"),
+                                   UIImage(named: "starbucks"),
+                                   UIImage(named: "footlocker"),
+                                   UIImage(named: "walmart")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +41,8 @@ class CouponsTableViewController: UITableViewController {
 
         cell.textLabel?.text = companies[indexPath.row]
         cell.detailTextLabel?.text = "Redeem Now"
-        cell.detailTextLabel?.textColor = .blue 
+        cell.detailTextLabel?.textColor = .blue
+        cell.imageView?.image = companyLogos[indexPath.row]
 
         return cell
     }
