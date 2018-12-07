@@ -13,4 +13,5 @@ struct User {
     let email: String
     let uid: String
     let points: Int
+    let image: String 
 }
