@@ -17,7 +17,7 @@ class CameraMLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .hd1920x1080
+        captureSession.sessionPreset = .photo
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
@@ -34,9 +34,6 @@ class CameraMLViewController: UIViewController {
         captureSession.addOutput(dataOutput)
 
     }
-    
-    
-    
 
 }
 
@@ -51,12 +48,11 @@ extension CameraMLViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             guard let results = finishReq.results as? [VNClassificationObservation] else { return }
             guard let firstObs = results.first else { return }
             if firstObs.identifier == "Recycling" {
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: {
-                        self.createAlertController(title: "Found Recycling Bin!!!", message: "Hooray", image: "checkmark")
-                        self.captureSession.stopRunning()
-                    })
-                }
+                self.captureSession.stopRunning()
+                self.createAlertController(title: "Found Recycling Bin!!!", message: "Hooray", image: "checkmark")
+//                DispatchQueue.main.async {
+//                    self.dismiss(animated: true)
+//                }
             }
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
