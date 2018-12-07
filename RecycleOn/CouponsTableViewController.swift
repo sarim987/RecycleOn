@@ -21,6 +21,7 @@ class CouponsTableViewController: UITableViewController {
                                    UIImage(named: "footlocker"),
                                    UIImage(named: "walmart")]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,8 +44,15 @@ class CouponsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "Redeem Now"
         cell.detailTextLabel?.textColor = .blue
         cell.imageView?.image = companyLogos[indexPath.row]
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CouponsTableViewController.redeem))
+        cell.detailTextLabel?.isUserInteractionEnabled = true
+        cell.detailTextLabel?.addGestureRecognizer(tap)
 
         return cell
+    }
+    
+    @objc func redeem() {
+        createAlertController(title: "Reedem This Coupon", message: "Hooray", image: "barcode")
     }
  
 

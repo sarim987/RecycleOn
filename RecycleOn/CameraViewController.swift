@@ -10,7 +10,6 @@ import UIKit
 
 class CameraViewController: UIViewController {
     
-    
     @IBOutlet weak var launchCamera: UIImageView!
     let imageTapRecognizer = UITapGestureRecognizer()
     
@@ -25,40 +24,29 @@ class CameraViewController: UIViewController {
     
 
     @IBAction func takeImage(_ sender: UIBarButtonItem) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            presentImagePicker(with: .camera)
-        } else {
-            createAlertController(title: "Aww Man", message: "Can you allow our app access to your camera please.")
-        }
+//        performSegue(withIdentifier: "ShowCamera", sender: nil)
+        createAlertController(title: "Complete", message: "You earned 100 points", image: "checkmark")
     }
     
-    //MARK: - UIImagePicker methods
-    func presentImagePicker(with sourceType: UIImagePickerController.SourceType){
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = sourceType
-        present(imagePicker, animated: true, completion: nil)
-    }
 }
 
-extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-//            imageView.image = image
-            print("This is where the computer vision comes in ;)")
-        }
-        dismiss(animated: true, completion: nil)
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-}
+
 
 extension UIViewController {
-    func createAlertController(title: String, message: String) {
+    func createAlertController(title: String, message: String, image: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(ok)
+        let imageView = UIImageView(frame: CGRect(x: (alertController.view.frame.size.width/2) - 100, y: 80, width: 100, height: 100))
+        
+        imageView.image = UIImage(named: image)
+        alertController.view.addSubview(imageView)
+        let height = NSLayoutConstraint(item: alertController.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        
+        alertController.view.addConstraint(height)
+        
         present(alertController, animated: true, completion: nil)
     }
+    
 }
