@@ -12,8 +12,6 @@ import FirebaseDatabase
 
 class LeaderboardViewController: UIViewController {
     
-    var userImages: [String] = ["johnny", "rachel", "joe", "tajour", "sarim", "user_placeholder", "ari"]
-    
     var users:[User] = []
     @IBOutlet weak var tableview: UITableView!
     
@@ -44,7 +42,7 @@ class LeaderboardViewController: UIViewController {
                             email: data["email"] as! String,
                             uid: data["uid"] as! String,
                             points: data["points"] as! Int,
-                            image: userImages[Int.random(in: 0..<userImages.count)])
+                            image: data["name"] as! String)
             users.append(user)
         }
         users.sort { (u1, u2) -> Bool in u1.points > u2.points }
@@ -62,7 +60,7 @@ extension LeaderboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = users[indexPath.row].name
         cell.detailTextLabel?.text = "\(users[indexPath.row].points) points"
-        cell.imageView?.image = UIImage(named: users[indexPath.row].image)
+        cell.imageView?.image = UIImage(named: users[indexPath.row].image) != nil ? UIImage(named: users[indexPath.row].image) : UIImage(named: "user_placeholder")
         return cell
     }
 }

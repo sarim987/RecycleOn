@@ -10,10 +10,13 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+var currentPoints: Int = 0
+
 class CameraViewController: UIViewController {
     
     @IBOutlet weak var launchCamera: UIImageView!
     let imageTapRecognizer = UITapGestureRecognizer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +25,20 @@ class CameraViewController: UIViewController {
         launchCamera.isUserInteractionEnabled = true
         imageTapRecognizer.addTarget(self, action: #selector(CameraViewController.takeImage(_:)))
         launchCamera.addGestureRecognizer(imageTapRecognizer)
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Database.database().reference().child("users").child(uid).observe(.value) { (snapshot) in
+            if snapshot.exists() {
+                if let points = snapshot.childSnapshot(forPath: "points").value as? Int {
+                    currentPoints = points
+                }
+            }
+        }
     }
     
 
     @IBAction func takeImage(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "ShowCamera", sender: nil)
-        
     }
 }
 
@@ -35,16 +46,12 @@ class CameraViewController: UIViewController {
 
 extension UIViewController {
     
-    func getPoints(_ db: DatabaseReference, completion: @escaping (Int?)->Void) {
-        db.observe(.value) { (snapshot) in
-            if snapshot.exists() {
-                let data = snapshot.value as? NSDictionary
-                if let p = data?["points"] as? Int {
-                    completion(p)
-                }
-            }
-        }
-        completion(nil)
+    func update(uid: String) {
+        let db = Database.database().reference().child("users").child(uid)
+        let randomInt = Int.random(in: 50 ..< 300)
+        let updateValue = ["points": currentPoints + randomInt]
+        db.updateChildValues(updateValue)
+
     }
     
     func createAlertController(title: String, message: String, image: String) {
@@ -52,17 +59,7 @@ extension UIViewController {
         
         let ok = UIAlertAction(title: "Ok", style: .default) { (alert) in
             self.dismiss(animated: true, completion: nil)
-            
-            if let user = Auth.auth().currentUser?.uid {
-                let db = Database.database().reference().child("users").child(user)
-                var myPoints = 0
-                // TODO: Won't add new value to current points.
-                self.getPoints(db, completion: {  num in if let points = num { myPoints = points } })
-                let randomInt = Int.random(in: 50 ..< 300)
-                let updateValue = ["points": myPoints + randomInt]
-                db.updateChildValues(updateValue)
-                
-            }
+            if let user = Auth.auth().currentUser?.uid { self.update(uid: user) }
             
         }
         alertController.addAction(ok)

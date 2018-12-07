@@ -26,7 +26,7 @@ class UserPageViewController: UIViewController {
             let email = user.email {
             userName.text = name
             userEmail.text = email
-            userImage.image = UIImage(named: "ari")
+            userImage.image = UIImage(named: name)
             getPoints(user.uid)
         }
 

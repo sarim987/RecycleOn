@@ -39,6 +39,9 @@ class LoginViewController: UIViewController {
         createFakeUser(email: "johnny@umass.edu", password: "testing1", name: "Johnny", points: 1000)
         createFakeUser(email: "rachel@umass.edu", password: "testing1", name: "Rachel", points: 850)
         createFakeUser(email: "joe@umass.edu", password: "testing1", name: "Joe", points: 840)
+        createFakeUser(email: "tajour@umass.edu", password: "testing1", name: "Tajour", points: 700)
+        createFakeUser(email: "sarim@umass.edu", password: "testing1", name: "Sarim", points: 680)
+        createFakeUser(email: "khang@umass.edu", password: "testing1", name: "Khang", points: 650)
     }
     
     func createFakeUser(email: String, password: String, name: String, points: Int) {
