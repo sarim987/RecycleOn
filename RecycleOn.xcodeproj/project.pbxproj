@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F1FCD0621BAF16100129030 /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1FCD0521BAF16100129030 /* Coupons.swift */; };
 		6F5D893321BAB6EE00F8A5D0 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6F5D893221BAB6ED00F8A5D0 /* ImageClassifier.mlmodel */; };
 		6F5D893521BAB74600F8A5D0 /* CameraMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5D893421BAB74600F8A5D0 /* CameraMLViewController.swift */; };
 		6F65CD7C21B9B64C004C7753 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65CD7B21B9B64C004C7753 /* UserPageViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		4FE63D51104C4183ABCFDA8C /* Pods-RecycleOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecycleOn/Pods-RecycleOn.release.xcconfig"; sourceTree = "<group>"; };
+		6F1FCD0521BAF16100129030 /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
 		6F5D893221BAB6ED00F8A5D0 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		6F5D893421BAB74600F8A5D0 /* CameraMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMLViewController.swift; sourceTree = "<group>"; };
 		6F65CD7B21B9B64C004C7753 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				6F65CD7D21B9B84B004C7753 /* CameraViewController.swift */,
 				6F5D893421BAB74600F8A5D0 /* CameraMLViewController.swift */,
 				6FEE8E8A21B9E0DE003202AF /* User.swift */,
+				6F1FCD0521BAF16100129030 /* Coupons.swift */,
 				92F0583521AC66BA006D6FAC /* Main.storyboard */,
 				92F0583821AC66BC006D6FAC /* Assets.xcassets */,
 				92F0583A21AC66BC006D6FAC /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				6F5D893521BAB74600F8A5D0 /* CameraMLViewController.swift in Sources */,
 				6FEE8E8B21B9E0DE003202AF /* User.swift in Sources */,
 				6F5D893321BAB6EE00F8A5D0 /* ImageClassifier.mlmodel in Sources */,
+				6F1FCD0621BAF16100129030 /* Coupons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

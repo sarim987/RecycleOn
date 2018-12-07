@@ -46,21 +46,30 @@ class CameraViewController: UIViewController {
 
 extension UIViewController {
     
-    func update(uid: String) {
+    func addPoints(uid: String, points: Int) {
         let db = Database.database().reference().child("users").child(uid)
-        let randomInt = Int.random(in: 50 ..< 300)
-        let updateValue = ["points": currentPoints + randomInt]
+        let updateValue = ["points": currentPoints + points]
         db.updateChildValues(updateValue)
-
     }
     
-    func createAlertController(title: String, message: String, image: String) {
+    func subtractPoints(uid: String, points: Int) {
+        let db = Database.database().reference().child("users").child(uid)
+        let updateValue = ["points": currentPoints - points]
+        db.updateChildValues(updateValue)
+    }
+    
+    func createAlertController(title: String, message: String, image: String, addPoints: Int? = nil, subtractPoints: Int? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "Ok", style: .default) { (alert) in
-            self.dismiss(animated: true, completion: nil)
-            if let user = Auth.auth().currentUser?.uid { self.update(uid: user) }
-            
+           
+            if let user = Auth.auth().currentUser?.uid {
+                if addPoints != nil {
+                    self.addPoints(uid: user, points: addPoints!)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                if subtractPoints != nil { self.subtractPoints(uid: user, points: subtractPoints!) }
+            }
         }
         alertController.addAction(ok)
         let imageView = UIImageView(frame: CGRect(x: (view.frame.size.width/2) - 120, y: 80, width: 200, height: 200))

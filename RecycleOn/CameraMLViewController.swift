@@ -49,7 +49,7 @@ extension CameraMLViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             guard let firstObs = results.first else { return }
             if firstObs.identifier == "Recycling" {
                 self.captureSession.stopRunning()
-                self.createAlertController(title: "Found Recycling Bin!!!", message: "Hooray", image: "checkmark")
+                self.createAlertController(title: "Found Recycling Bin!!!", message: "Hooray", image: "checkmark", addPoints: Int.random(in: 50 ..< 250))
 //                DispatchQueue.main.async {
 //                    self.dismiss(animated: true)
 //                }
