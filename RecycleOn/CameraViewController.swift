@@ -38,11 +38,11 @@ extension UIViewController {
         
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(ok)
-        let imageView = UIImageView(frame: CGRect(x: (alertController.view.frame.size.width/2) - 100, y: 80, width: 100, height: 100))
+        let imageView = UIImageView(frame: CGRect(x: (alertController.view.frame.size.width/2) - 150, y: 80, width: 200, height: 200))
         
         imageView.image = UIImage(named: image)
         alertController.view.addSubview(imageView)
-        let height = NSLayoutConstraint(item: alertController.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        let height = NSLayoutConstraint(item: alertController.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 350)
         
         alertController.view.addConstraint(height)
         
