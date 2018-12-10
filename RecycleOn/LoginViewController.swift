@@ -23,9 +23,7 @@ class LoginViewController: UIViewController {
         print("Tapped")
         
         let authUI = FUIAuth.defaultAuthUI()
-        guard authUI != nil else {
-            return
-        }
+        guard authUI != nil else { return }
         
         authUI?.delegate = self
         
@@ -46,7 +44,7 @@ class LoginViewController: UIViewController {
     
     func createFakeUser(email: String, password: String, name: String, points: Int) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            if error != nil { print(error) }
+            if error != nil { print(error ?? "") }
             if let user = result?.user {
                 
                 let db = Database.database().reference().child("users").child(user.uid)
@@ -55,7 +53,7 @@ class LoginViewController: UIViewController {
                                              "points": points,
                                              "uid" : user.uid]
                 db.setValue(values, withCompletionBlock: { (err, db) in
-                    if err != nil { print(err) }
+                    if err != nil { print(err ?? "") }
                     print("Added \(name)")
                 })
                 
@@ -77,7 +75,7 @@ extension LoginViewController: FUIAuthDelegate {
                                      "points": 0,
                                      "uid": user.uid]
             db.setValue(values) { (err, db) in
-                if err != nil { print(err)}
+                if err != nil { print(err ?? "")}
                 print("Added \(user.displayName!)")
             }
         }

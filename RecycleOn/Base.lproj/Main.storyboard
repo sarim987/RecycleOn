@@ -345,7 +345,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RecycleOn" width="311" height="366"/>
+        <image name="RecycleOn" width="600.75" height="456"/>
         <image name="camera" width="30" height="30"/>
         <image name="camera_image" width="1200" height="630"/>
         <image name="first" width="30" height="30"/>
