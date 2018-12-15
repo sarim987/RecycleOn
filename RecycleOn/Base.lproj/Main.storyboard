@@ -20,17 +20,20 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecycleOn" translatesAutoresizingMaskIntoConstraints="NO" id="fid-5G-twY">
                                 <rect key="frame" x="16" y="39" width="288" height="306"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQH-5E-Lb3">
                                 <rect key="frame" x="16" y="361" width="288" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Log In"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.079015977680683136" green="0.81675237417221069" blue="0.21698811650276184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="QNg-qS-Eeq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.048959292471408844" green="0.52390837669372559" blue="0.891185462474823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fid-5G-twY" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="Cbh-wY-D8E"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="fid-5G-twY" secondAttribute="trailing" constant="16" id="NBU-9K-bgP"/>
@@ -73,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.063592902466728093" green="0.52747852067339485" blue="0.89340101522842641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ni2-Nr-LQK" firstAttribute="trailing" secondItem="bwN-jW-f7p" secondAttribute="trailing" constant="10" id="Dta-Vn-ys8"/>
                             <constraint firstItem="ni2-Nr-LQK" firstAttribute="leading" secondItem="bwN-jW-f7p" secondAttribute="leading" constant="10" id="OV8-WB-OeA"/>
@@ -158,13 +161,16 @@
                                     <constraint firstAttribute="height" constant="67" id="hah-gk-IzR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Get Coupons!"/>
+                                <state key="normal" title="Get Coupons!">
+                                    <color key="titleColor" red="0.079015977680683136" green="0.81675237417221069" blue="0.21698811650276184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="Kq7-e1-6Kq" kind="show" id="1MJ-fj-ltk"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.066067018325873333" green="0.52991039670313778" blue="0.93054013324873097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uQd-5s-Itv" firstAttribute="leading" secondItem="ybU-x8-b4W" secondAttribute="leading" constant="16" id="69M-e9-QzT"/>
                             <constraint firstItem="eVd-GU-eH0" firstAttribute="bottom" secondItem="2b8-Ef-lNm" secondAttribute="bottom" constant="30" id="dSf-Le-OSm"/>
@@ -197,7 +203,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hcb-92-m1Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.066067018330000005" green="0.52991039669999995" blue="0.93054013319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.066067018330000005" green="0.52991039669999995" blue="0.93054013319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="YXH-cC-cej" detailTextLabel="cc2-T9-vhU" imageView="9tR-au-uIm" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="CU8-tW-sbe">
                                 <rect key="frame" x="0.0" y="28" width="320" height="50"/>
@@ -226,6 +233,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.079015977680683136" green="0.81675237417221069" blue="0.21698811650276184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -248,7 +256,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-kV-Qhx">
                                 <rect key="frame" x="16" y="20" width="288" height="499"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.066067018330000005" green="0.52991039669999995" blue="0.93054013319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="cMa-wJ-JTt" detailTextLabel="5c0-dX-TNk" imageView="TRZ-FZ-5Mk" rowHeight="75" style="IBUITableViewCellStyleValue1" id="cEB-Cm-LbZ">
                                         <rect key="frame" x="0.0" y="28" width="288" height="75"/>
@@ -281,12 +289,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.079015977680683136" green="0.81675237417221069" blue="0.21698811650276184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.079015977680683136" green="0.81675237417221069" blue="0.21698811650276184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.066067018330000005" green="0.52991039669999995" blue="0.93054013319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="49r-Xg-4RJ" firstAttribute="trailing" secondItem="P9Z-kV-Qhx" secondAttribute="trailing" constant="16" id="ATj-qu-KGa"/>
                             <constraint firstItem="P9Z-kV-Qhx" firstAttribute="top" secondItem="49r-Xg-4RJ" secondAttribute="top" id="Ova-4L-SVb"/>
@@ -312,7 +322,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9CM-FK-xVS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBar>
                     <connections>
                         <segue destination="Yw7-8e-pXI" kind="relationship" relationship="viewControllers" id="NbV-KR-bA0"/>
@@ -333,6 +343,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LKc-0E-4BD">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -345,7 +357,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RecycleOn" width="600.75" height="456"/>
+        <image name="RecycleOn" width="801" height="608"/>
         <image name="camera" width="30" height="30"/>
         <image name="camera_image" width="1200" height="630"/>
         <image name="first" width="30" height="30"/>
