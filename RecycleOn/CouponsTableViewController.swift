@@ -42,7 +42,7 @@ class CouponsTableViewController: UITableViewController {
         guard coupons[indexPath.row].redeemed == false else { return UITableViewCell() }
         cell.textLabel?.text = coupons[indexPath.row].name
         cell.detailTextLabel?.text = "Redeem For \(coupons[indexPath.row].points) Points"
-        cell.detailTextLabel?.textColor = .blue
+//        cell.detailTextLabel?.textColor = .blue
         cell.imageView?.image = UIImage(named: coupons[indexPath.row].image)
 
         return cell
